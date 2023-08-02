@@ -5,9 +5,7 @@ import {
   TabsBody,
   Tab,
   TabPanel,
-  Input
 } from '@material-tailwind/react'
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { Breadcrumb } from './Breadcrumb'
 
 export function BaseTab() {

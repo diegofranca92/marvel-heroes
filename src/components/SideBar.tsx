@@ -1,26 +1,26 @@
 import React from 'react'
 import {
   Card,
-  Drawer,
-  IconButton,
+  // Drawer,
+  // IconButton,
   List,
   ListItem,
-  Typography
+  // Typography
 } from '@material-tailwind/react'
 import logoPontua from '../assets/logo_pontua.svg'
 import {
   ArrowLeftOnRectangleIcon,
-  Bars3Icon,
+  // Bars3Icon,
   HomeIcon,
   UserCircleIcon,
-  XMarkIcon
+  // XMarkIcon
 } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
 
 export function SideBar() {
-  const [open, setOpen] = React.useState(false)
-  const openDrawer = () => setOpen(true)
-  const closeDrawer = () => setOpen(false)
+  // const [open, setOpen] = React.useState(false)
+  // const openDrawer = () => setOpen(true)
+  // const closeDrawer = () => setOpen(false)
 
   return (
     <Card className='h-[calc(100vh-2rem)] w-full max-w-[18rem] p-4 shadow-xl shadow-blue-gray-900/5'>

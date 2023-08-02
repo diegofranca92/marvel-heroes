@@ -19,9 +19,9 @@ import { Link } from 'react-router-dom'
 export function SignIn() {
   const inputPass = useRef(null)
 
-  function showPass() {
-    // https://horadecodar.com.br/como-fazer-input-de-password-com-olho-de-mostrar-senha/
-  }
+  // function showPass() {
+  //   // https://horadecodar.com.br/como-fazer-input-de-password-com-olho-de-mostrar-senha/
+  // }
 
   return (
     <main className='w-full h-screen flex flex-col items-center bg-pontua-primary justify-center'>
