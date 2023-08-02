@@ -34,8 +34,8 @@ export function SideBar() {
             Home
           </ListItem>
         </Link>
-        <Link to='/profile'>
-          <ListItem>
+        <Link to='/profile' className='pointer-events-none'>
+          <ListItem disabled>
             <UserCircleIcon className='h-6 w-6 mr-4' />
             Perfil
           </ListItem>

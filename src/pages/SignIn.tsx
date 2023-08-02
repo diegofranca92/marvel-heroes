@@ -14,14 +14,19 @@ import {
   EyeIcon,
   ShieldExclamationIcon
 } from '@heroicons/react/24/outline'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export function SignIn() {
   const inputPass = useRef(null)
+  const navigate = useNavigate()
 
   // function showPass() {
   //   // https://horadecodar.com.br/como-fazer-input-de-password-com-olho-de-mostrar-senha/
   // }
+
+  function onSubmit() {
+    navigate('/home')
+  }
 
   return (
     <main className='w-full h-screen flex flex-col items-center bg-pontua-primary justify-center'>
@@ -41,7 +46,7 @@ export function SignIn() {
           </Typography>
 
           <form
-            onSubmit={() => {}}
+            onSubmit={onSubmit}
             className='mt-8 mb-2 w-80 max-w-screen-lg sm:w-96'>
             <div className='mb-4 flex flex-col gap-6'>
               <Input
