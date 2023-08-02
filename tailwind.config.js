@@ -8,7 +8,17 @@ export default withMT({
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        pontua:{
+          primary: "#00113d",
+          orange: {
+            400: "#f43724",
+            500: "#f21a05"
+          }
+        }
+      }
+    },
   },
   plugins: [],
 })
