@@ -9,7 +9,7 @@ import {
 
 export function HeroCard() {
   return (
-    <Card className="w-full max-w-[48rem] flex-row bg-blue-gray-50 rounded-3xl">
+    <Card className="w-full max-w-[24rem] h-48 max-h-fit flex-row bg-blue-gray-50 rounded-3xl">
       <CardHeader
         shadow={false}
         floated={false}
@@ -25,7 +25,7 @@ export function HeroCard() {
         <Typography variant="h4" color="blue-gray" className="mb-2">
         Wolverine
         </Typography>
-        <Typography color="gray" className="mb-8 font-normal">
+        <Typography color="gray" className="mb-8 font-normal text-ellipsis max-h-full overflow-hidden">
         Born with super-human senses and the power to heal from almost any wound, Wolverine was captured by a secret Canadian organization and given an unbreakable .
         </Typography>
         <a href="#" className="inline-block">

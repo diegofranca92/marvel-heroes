@@ -59,7 +59,7 @@ export function SignIn() {
                 label='Senha'
                 ref={inputPass}
                 icon={
-                  <IconButton className='bg-transparent bottom-2 right-2 opacity-50'>
+                  <IconButton className='bg-transparent bottom-2 right-2 opacity-50 hover:shadow-none'>
                     <EyeIcon className='text-pontua-primary h-6 w-6' />
                   </IconButton>
                 }

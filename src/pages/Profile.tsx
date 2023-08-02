@@ -1,18 +1,11 @@
-import { HeroCard } from "../components/HeroCard";
+import { BaseTab } from '../components/BaseTab'
+import { SideBar } from '../components/SideBar'
 
 export function Profile() {
-  const dados = [
-    {
-      id: 1,
-      name: 'Volverine',
-      autor: 'Marvel'
-    }
-  ]
   return (
-    <>
-      {dados.map(hero => (
-        <HeroCard key={hero.id} />
-      ))}
-    </>
+    <main className='flex'>
+      <SideBar />
+      <BaseTab />
+    </main>
   )
 }
