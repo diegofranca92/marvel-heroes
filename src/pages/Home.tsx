@@ -1,8 +1,11 @@
+import { BaseTab } from "../components/BaseTab";
+import { SideBar } from "../components/SideBar";
 
 export function Home() {
   return (
     <>
-      <h1>Home</h1>
+      <SideBar />
+      <BaseTab/>
     </>
   )
 }
