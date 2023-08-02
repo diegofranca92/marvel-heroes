@@ -11,6 +11,19 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
+.custom-elipsis {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+}
+
+.elipsis-title {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+}
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }

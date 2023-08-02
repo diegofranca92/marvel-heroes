@@ -8,7 +8,7 @@ const api = {
     return fetch(`${baseURL}${endpoint}?${auth}`)
   },
 
-  getById: function (endpoint: string, id: number, path?: string) {
+  getById: function (endpoint: string, id: string, path?: string) {
     if (path) {
       return fetch(`${baseURL}${endpoint}/${id}/${path}?${auth}`)
     } else {

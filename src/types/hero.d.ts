@@ -1,5 +1,5 @@
 declare namespace Hero {
-  type HeroCard = {
+  interface HeroCard {
     thumbnail: {
       path: string
       extension: string
@@ -7,5 +7,9 @@ declare namespace Hero {
     name: string
     id?: number
     description: string
+  }
+
+  interface HeroDetail extends HeroCard {
+    comics: string
   }
 }

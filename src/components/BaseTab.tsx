@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   Tabs,
   TabsHeader,
@@ -8,7 +8,11 @@ import {
 } from '@material-tailwind/react'
 import { Breadcrumb } from './Breadcrumb'
 
-export function BaseTab() {
+type TabProps = {
+  hero: Hero.HeroDetail
+}
+
+export function BaseTab({ hero }: TabProps) {
   const [activeTab, setActiveTab] = React.useState('geral')
   const data = [
     {
@@ -37,39 +41,45 @@ export function BaseTab() {
       desc: 'StanGLA@ e F StAvAGDitko'
     }
   ]
+
+  useEffect(() => {
+    console.log(hero.name);
+  }, [])
+
   return (
     <div className='mt-12 flex-1'>
-      <Breadcrumb />
-    <Tabs className='mt-8' value={activeTab}>
-      <TabsHeader
-        className='rounded-none border-b border-blue-gray-50 bg-transparent p-0'
-        indicatorProps={{
-          className:
-            'bg-transparent border-b-2 border-blue-500 shadow-none rounded-none'
-        }}>
-        {data.map(({ label, value }) => (
-          <Tab
-            key={value}
-            value={value}
-            onClick={() => setActiveTab(value)}
-            className={activeTab === value ? 'text-blue-500' : ''}>
-            {label}
-          </Tab>
-        ))}
-      </TabsHeader>
-      <TabsBody
-        animate={{
-          initial: { y: 250 },
-          mount: { y: 0 },
-          unmount: { y: 250 }
-        }}>
-        {data.map(({ value, desc }) => (
-          <TabPanel key={value} value={value}>
-            {desc}
-          </TabPanel>
-        ))}
-      </TabsBody>
-    </Tabs>
+      <Breadcrumb profile={hero.name} />
+      <Tabs className='mt-8' value={activeTab}>
+        <TabsHeader
+          className='rounded-none border-b border-blue-gray-50 bg-transparent p-0'
+          indicatorProps={{
+            className:
+              'bg-transparent border-b-2 border-blue-500 shadow-none rounded-none'
+          }}>
+          {data.map(({ label, value }) => (
+            <Tab
+              key={value}
+              value={value}
+              onClick={() => setActiveTab(value)}
+              className={activeTab === value ? 'text-blue-500' : ''}>
+              {label}
+            </Tab>
+          ))}
+        </TabsHeader>
+        <TabsBody
+        // animate={{
+        //   initial: { y: 250 },
+        //   mount: { y: 0 },
+        //   unmount: { y: 250 }
+        // }}
+        >
+          {data.map(({ value, desc }) => (
+            <TabPanel key={value} value={value}>
+              {desc}
+            </TabPanel>
+          ))}
+        </TabsBody>
+      </Tabs>
     </div>
   )
 }
