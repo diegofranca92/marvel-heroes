@@ -2,30 +2,30 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { HeroCard } from '../components/HeroCard'
 import { SideBar } from '../components/SideBar'
 import { Input } from '@material-tailwind/react'
+import { useEffect, useState } from 'react'
+import api from '../services/api'
 
 export function Home() {
-  const dados = [
-    {
-      id: 1,
-      name: 'Volverine',
-      autor: 'Marvel'
-    },
-    {
-      id: 2,
-      name: 'Volverine',
-      autor: 'Marvel'
-    },
-    {
-      id: 3,
-      name: 'Volverine',
-      autor: 'Marvel'
-    },
-    {
-      id: 4,
-      name: 'Volverine',
-      autor: 'Marvel'
+
+  const [characters, setCharacters] = useState<Hero.HeroCard[]>()
+
+  async function fetchCharacters() {
+    try {
+      const response = await api.getAll('characters')
+      const { data } = await response.json();
+      console.log(data.results);
+      
+      setCharacters(data.results)
+    } catch (error) {
+      console.log(error);
     }
-  ]
+
+  }
+
+  useEffect(() => {
+    fetchCharacters()
+  }, [])
+
   return (
     <main className='flex'>
       <SideBar />
@@ -35,8 +35,8 @@ export function Home() {
           label='Busque um agente'
         />
         <div className='my-8 gap-6 flex flex-wrap'>
-          {dados.map(hero => (
-            <HeroCard key={hero.id} />
+          {characters?.map(hero => (
+            <HeroCard key={hero.id} description={hero.description} name={hero.name} thumbnail={hero.thumbnail} />
           ))}
         </div>
       </div>
