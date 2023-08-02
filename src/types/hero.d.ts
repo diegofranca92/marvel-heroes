@@ -9,7 +9,23 @@ declare namespace Hero {
     description: string
   }
 
+  interface DetailItems {
+    resourceURI: string
+    name: string
+  }
+
   interface HeroDetail extends HeroCard {
-    comics: string
+    comics: {
+      items: DetailItems[]
+    }
+    series: {
+      items: DetailItems[]
+    }
+    stories: {
+      items: DetailItems[]
+    }
+    events: {
+      items: DetailItems[]
+    }
   }
 }

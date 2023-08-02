@@ -8,29 +8,29 @@ export function Profile() {
   const params = useParams()
   const id = params.id
 
-  const [characterProfile, setCharacterProfile] = useState({} as Hero.HeroDetail)
-
-  async function fetchCharacterProfile() {
-    try {
-      const response = await api.getById('characters', id!)
-      const { data } = await response.json();
-
-      setCharacterProfile(data.results[0])
-    } catch (error) {
-      console.log(error);
-    }
-
-  }
+  const [characterProfile, setCharacterProfile] = useState<Hero.HeroDetail[]>()
 
   useEffect(() => {
-    fetchCharacterProfile()
+    async function fetchCharacterProfile() {
+      try {
+        const response = await api.getById('characters', id!)
+        const { data } = await response.json();
+        setCharacterProfile(data.results)
+      } catch (error) {
+        console.log(error);
+      }
+  
+    }
 
-  }, [])
+    fetchCharacterProfile()
+  }, [id])
 
   return (
     <main className='flex'>
       <SideBar />
-      <BaseTab hero={characterProfile} />
+      {characterProfile?.map(profile => (
+        <BaseTab hero={profile} />
+      ))}
     </main>
   )
 }

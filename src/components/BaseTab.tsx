@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import {
   Tabs,
   TabsHeader,
   TabsBody,
   Tab,
   TabPanel,
+  Typography,
+  Card,
+  CardBody,
 } from '@material-tailwind/react'
 import { Breadcrumb } from './Breadcrumb'
 
@@ -18,36 +21,67 @@ export function BaseTab({ hero }: TabProps) {
     {
       label: 'Visão Geral',
       value: 'geral',
-      desc: `A-Bomb (HAS)`
+      content:
+        <Card className='rounded-3xl flex max-w-full h-52 max-h-fit flex-row p-4 items-center'>
+          <img src={`${hero?.thumbnail?.path}.${hero?.thumbnail?.extension}`} alt={hero?.name} className='rounded-full w-32 h-32' />
+          <CardBody>
+            <Typography variant="h4" color="blue-gray" className="mb-2 elipsis-title overflow-hidden">
+              {hero?.name}
+            </Typography>
+            <Typography color="gray" className="mb-8 font-normal custom-elipsis overflow-hidden">
+              {hero?.description.length ? hero?.description : 'Não possui descrição'}
+            </Typography>
+          </CardBody>
+        </Card>
     },
     {
-      label: 'Teams',
-      value: 'teams',
-      desc: `AvJngJTR B DJPJndJTR B Fantastic FouS`
+      label: 'Comics',
+      value: 'comics',
+      content:
+        <ul>
+          {!hero.comics.items.length && 'Not found comics'}
+          {hero.comics.items.map(comic => (
+            <li className='list-disc'>{comic.name}</li>
+          ))}
+        </ul>
     },
     {
-      label: 'Powers',
-      value: 'vue',
-      desc: `AgiliLH, G GXniuE, G GXnius-lXvXl inLXllXcK`
+      label: 'Series',
+      value: 'series',
+      content:
+        <ul>
+          {!hero.series.items.length && 'Not found series'}
+          {hero.series.items.map(serie => (
+            <li className='list-disc'>{serie.name}</li>
+          ))}
+        </ul>
     },
     {
-      label: 'Species',
-      value: 'species',
-      desc: `Mutate`
+      label: 'Stories',
+      value: 'stories',
+      content:
+        <ul>
+          {!hero.stories.items.length && 'Not found stories'}
+          {hero.stories.items.map(story => (
+            <li className='list-disc'>{story.name}</li>
+          ))}
+        </ul>
     },
     {
-      label: 'Authors',
-      value: 'authors',
-      desc: 'StanGLA@ e F StAvAGDitko'
+      label: 'Events',
+      value: 'events',
+      content:
+        <ul>
+          {!hero.events.items.length && 'Not found events'}
+          {hero.events.items.map(event => (
+            <li className='list-disc'>{event.name}</li>
+          ))}
+        </ul>
     }
   ]
 
-  useEffect(() => {
-    console.log(hero.name);
-  }, [])
-
   return (
-    <div className='mt-12 flex-1'>
+    <div className='m-12 flex-1'>
       <Breadcrumb profile={hero.name} />
       <Tabs className='mt-8' value={activeTab}>
         <TabsHeader
@@ -67,15 +101,15 @@ export function BaseTab({ hero }: TabProps) {
           ))}
         </TabsHeader>
         <TabsBody
-        // animate={{
-        //   initial: { y: 250 },
-        //   mount: { y: 0 },
-        //   unmount: { y: 250 }
-        // }}
+          animate={{
+            initial: { y: 250 },
+            mount: { y: 0 },
+            unmount: { y: 250 }
+          }}
         >
-          {data.map(({ value, desc }) => (
-            <TabPanel key={value} value={value}>
-              {desc}
+          {data.map(({ value, content }) => (
+            <TabPanel key={value} className='p-8' value={value}>
+              {content}
             </TabPanel>
           ))}
         </TabsBody>

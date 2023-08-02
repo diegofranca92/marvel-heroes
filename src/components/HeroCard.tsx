@@ -34,15 +34,17 @@ export function HeroCard({ id, name, thumbnail, description }: Hero.HeroCard) {
         </CardBody>
       </div>
       <CardFooter className="pt-0">
-        <Button
-          ripple={false}
-          fullWidth={true}
-          className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-        >
-          <Link to={`/profile/${id}`} className="text-center">
+
+        <Link to={`/profile/${id}`} className="text-center">
+          <Button
+            ripple={false}
+            fullWidth={true}
+            className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+          >
             Ver mais
-          </Link>
-        </Button>
+          </Button>
+        </Link>
+
       </CardFooter>
     </Card>
   );
