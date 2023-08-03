@@ -25,10 +25,10 @@ export function BaseTab({ hero }: TabProps) {
         <Card className='rounded-3xl flex max-w-full h-52 max-h-fit flex-row p-4 items-center'>
           <img src={`${hero?.thumbnail?.path}.${hero?.thumbnail?.extension}`} alt={hero?.name} className='rounded-full w-32 h-32' />
           <CardBody>
-            <Typography variant="h4" color="blue-gray" className="mb-2 elipsis-title overflow-hidden">
+            <Typography variant="h4" color="blue-gray" className="mb-2">
               {hero?.name}
             </Typography>
-            <Typography color="gray" className="mb-8 font-normal custom-elipsis overflow-hidden">
+            <Typography color="gray" className="mb-8 font-normal">
               {hero?.description.length ? hero?.description : 'Não possui descrição'}
             </Typography>
           </CardBody>
