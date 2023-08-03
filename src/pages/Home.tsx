@@ -4,6 +4,7 @@ import { Input } from '@material-tailwind/react'
 import { useEffect, useState } from 'react'
 import api from '../services/api'
 import { Loading } from '../components/Loading'
+import { Pagination } from '../components/Pagination'
 
 export function Home() {
 
@@ -42,6 +43,7 @@ export function Home() {
         value={search.toLowerCase()}
         onChange={(e) => setSearch(e.target.value)}
       />
+      <Pagination limit={12} offset={240} total={1200} />
       {loading ?
         <div className='flex justify-center items-center h-screen'>
           <Loading />
