@@ -19,7 +19,7 @@ import React from 'react'
 export function SideBar() {
 
   return (
-    <Card className='h-[calc(100vh-2rem)] w-full max-w-[18rem] p-4 shadow-xl shadow-blue-gray-900/5'>
+    <Card className='h-[calc(100vh-2rem)] w-full max-w-[18rem] p-4 shadow-xl'>
       <div className='mb-2 flex items-center justify-between p-4'>
         <img src={logoPontua} className='w-3/5' alt='Logomarca Pontua' />
       </div>
@@ -64,7 +64,7 @@ export function MenuDrawer() {
 
   return (
     <React.Fragment>
-      <div className="mb-2 flex items-center justify-between fixed top-0 h-[60px] bg-white z-50 w-screen p-4">
+      <div className="mb-2 flex items-center justify-between fixed top-0 shadow-sm h-[60px] bg-white z-50 w-screen p-4">
         <img src={logoPontua} className="w-3/12" alt="Logomarca Pontua" />
         <IconButton onClick={openDrawer} className='bg-pontua-primary'>
           <Bars3Icon className='h-8 w-8 text-white' />

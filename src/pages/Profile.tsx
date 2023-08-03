@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { BaseTab } from '../components/BaseTab'
-import { MenuDrawer, SideBar } from '../components/SideBar'
 import api from '../services/api';
 import { useParams } from 'react-router-dom';
 
@@ -19,23 +18,17 @@ export function Profile() {
       } catch (error) {
         console.log(error);
       }
-  
+
     }
 
     fetchCharacterProfile()
   }, [id])
 
   return (
-    <main className='flex'>
-      <div className='md:hidden'>
-        <MenuDrawer />
-      </div>
-      <div className='hidden md:block'>
-        <SideBar />
-      </div>
+    <>
       {characterProfile?.map(profile => (
         <BaseTab hero={profile} />
       ))}
-    </main>
+    </>
   )
 }
