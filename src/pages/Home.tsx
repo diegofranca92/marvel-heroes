@@ -9,6 +9,9 @@ export function Home() {
 
   const [characters, setCharacters] = useState<Hero.HeroCard[]>()
   const [loading, setLoading] = useState<boolean>(false)
+  const [search, setSearch] = useState<string>('')
+
+  const heroesFiltered = characters?.filter(hero => hero.name.toLowerCase().includes(search))
 
   async function fetchCharacters() {
     setLoading(true)
@@ -35,6 +38,9 @@ export function Home() {
       <Input
         icon={<MagnifyingGlassIcon className='h-5 w-5' />}
         label='Busque um agente'
+        type='search'
+        value={search.toLowerCase()}
+        onChange={(e) => setSearch(e.target.value)}
       />
       {loading ?
         <div className='flex justify-center items-center h-screen'>
@@ -42,7 +48,7 @@ export function Home() {
         </div>
         : (
           <div className='my-8 gap-6 flex flex-wrap justify-center'>
-            {characters?.map(hero => (
+            {heroesFiltered?.map(hero => (
               <HeroCard
                 key={hero.id}
                 id={hero.id}
