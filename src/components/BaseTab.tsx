@@ -22,7 +22,7 @@ export function BaseTab({ hero }: TabProps) {
       label: 'Visão Geral',
       value: 'geral',
       content:
-        <Card className='rounded-3xl flex max-w-full h-52 max-h-fit flex-row p-4 items-center'>
+        <Card className='rounded-3xl flex max-w-full min-h-52 lg:flex-row flex-col p-4 items-center'>
           <img src={`${hero?.thumbnail?.path}.${hero?.thumbnail?.extension}`} alt={hero?.name} className='rounded-full w-32 h-32' />
           <CardBody>
             <Typography variant="h4" color="blue-gray" className="mb-2">

@@ -1,6 +1,6 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { HeroCard } from '../components/HeroCard'
-import { SideBar } from '../components/SideBar'
+import { MenuDrawer, SideBar } from '../components/SideBar'
 import { Input } from '@material-tailwind/react'
 import { useEffect, useState } from 'react'
 import api from '../services/api'
@@ -33,8 +33,13 @@ export function Home() {
 
   return (
     <main className='flex'>
-      <SideBar />
-      <div className='flex-1 my-8 mx-12'>
+      <div className='md:hidden'>
+        <MenuDrawer />
+      </div>
+      <div className='hidden md:block'>
+        <SideBar />
+      </div>
+      <div className='flex-1 mt-24 mx-12 md:my-8'>
         <Input
           icon={<MagnifyingGlassIcon className='h-5 w-5' />}
           label='Busque um agente'

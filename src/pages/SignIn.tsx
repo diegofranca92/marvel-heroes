@@ -21,8 +21,7 @@ export function SignIn() {
   //   // https://horadecodar.com.br/como-fazer-input-de-password-com-olho-de-mostrar-senha/
   // }
 
-  function onSubmit(e: any) {
-    e.preventDefault()
+  function onSubmit() {
     navigate('/agent')
   }
 
