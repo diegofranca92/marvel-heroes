@@ -15,6 +15,8 @@ import {
   ShieldExclamationIcon
 } from '@heroicons/react/24/outline'
 import { Link, useNavigate } from 'react-router-dom'
+import { Agent } from './components/Agent'
+import { Recovery } from './components/Recovery'
 
 export function SignIn() {
   const inputPass = useRef(null)
@@ -37,7 +39,7 @@ export function SignIn() {
       />
       <div className='flex justify-around flex-wrap w-full'>
         <img src={building} className='w-5/12' alt='' />
-        <Card className='p-4 rounded-3xl'>
+        <Card className='p-4 rounded-3xl w-[28rem]'>
           <Typography variant='h1' color='blue-gray'>
             Bem vindo<strong className='text-pontua-orange-500'>.</strong>
           </Typography>
@@ -53,7 +55,7 @@ export function SignIn() {
                 size='lg'
                 type='text'
                 required
-                label='Usuário'
+                label='Usuário/Email'
                 className='text-pontua-primary font-bold'
                 icon={<AtSymbolIcon />}
               />
@@ -75,13 +77,15 @@ export function SignIn() {
               size='lg'
               type='submit'
               fullWidth>
-              Entrar <ArrowRightOnRectangleIcon className='w-6 h-6 inline' />
+              entrar <ArrowRightOnRectangleIcon className='w-6 h-6 inline' />
             </Button>
             <Link to='' className='text-pontua-orange-500 text-end float-right mt-4'>
               <ShieldExclamationIcon className='w-5 h-5 inline' />
               Esqueceu a senha?
             </Link>
           </form>
+          <Agent/>
+          <Recovery/>
         </Card>
       </div>
     </main>
