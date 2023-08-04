@@ -60,7 +60,7 @@ export function Pagination({ limit, total, offset }: PaginationProps) {
         </Button>
         <div className='flex items-center gap-2'>
           {Array.from({ length: Math.min(MAX_ITEMS, pages) }).map((_, index) => index + first)
-          .map((page, idxPage) => <IconButton {...getItemProps(idxPage)}>{page}</IconButton>)}
+          .map((page, idxPage) => <IconButton key={idxPage} {...getItemProps(idxPage)}>{page}</IconButton>)}
           
         </div>
         <Button

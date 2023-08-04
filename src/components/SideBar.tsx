@@ -15,6 +15,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
 import React from 'react'
+import useAuth from '../hooks/useAuth'
 
 export function SideBar() {
 
@@ -30,6 +31,11 @@ export function SideBar() {
 }
 
 function NavList() {
+  const { signOut } = useAuth()
+
+  async function handleLogout() {
+    signOut()
+  }
 
   return (
     <List>
@@ -46,12 +52,10 @@ function NavList() {
         </ListItem>
       </Link>
       <hr className='my-2 border-blue-gray-50' />
-      <Link to='/'>
-        <ListItem>
+      <ListItem onClick={handleLogout}>
           <ArrowLeftOnRectangleIcon className='h-6 w-6 mr-4' />
           Sair
         </ListItem>
-      </Link>
     </List>
   )
 }
