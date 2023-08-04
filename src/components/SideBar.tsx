@@ -20,7 +20,7 @@ import useAuth from '../hooks/useAuth'
 export function SideBar() {
 
   return (
-    <Card className='h-[calc(100vh-2rem)] w-full max-w-[18rem] p-4 shadow-xl'>
+    <Card className='min-h-full h-screen w-full max-w-[18rem] p-4 shadow-xl'>
       <div className='mb-2 flex items-center justify-between p-4'>
         <img src={logoPontua} className='w-3/5' alt='Logomarca Pontua' />
       </div>
