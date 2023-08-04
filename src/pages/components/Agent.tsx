@@ -33,7 +33,7 @@ export function Agent() {
         className='mt-6 bg-pontua-primary'
         size='lg'
         disabled={agentId == 0}
-        fullWidth>
+        >
         entrar
       </Button>
     </div>
