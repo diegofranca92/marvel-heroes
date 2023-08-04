@@ -2,7 +2,6 @@ import React from 'react'
 import {
   Button,
   ButtonGroup,
-  CardFooter,
   IconButton,
 } from '@material-tailwind/react'
 import {
