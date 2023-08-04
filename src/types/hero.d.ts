@@ -6,7 +6,7 @@ declare namespace Hero {
     }
     name: string
     id?: number
-    description: string
+    description?: string
   }
 
   interface DetailItems {

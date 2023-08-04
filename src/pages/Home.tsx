@@ -8,7 +8,7 @@ import { Pagination } from '../components/Pagination'
 
 export function Home() {
 
-  const [characters, setCharacters] = useState<Hero.HeroCard[]>()
+  const [characters, setCharacters] = useState<Hero.HeroCard[]>([])
   const [loading, setLoading] = useState<boolean>(false)
   const [search, setSearch] = useState<string>('')
 
