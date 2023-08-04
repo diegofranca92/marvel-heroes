@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   Button,
+  ButtonGroup,
   CardFooter,
   IconButton,
 } from '@material-tailwind/react'
@@ -29,10 +30,8 @@ export function Pagination({ limit, total, offset }: PaginationProps) {
 
   const getItemProps = (index: number) =>
   ({
-    variant: active === index ? 'filled' : 'text',
-    color: active === index ? 'blue' : 'blue-gray',
-    onClick: () => setActive((index - 1) * limit),
-    className: 'rounded-full'
+    className: active === index ? "bg-pontua-primary" : "",
+    onClick: () => setActive(index),
     // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   } as any)
 
@@ -49,31 +48,17 @@ export function Pagination({ limit, total, offset }: PaginationProps) {
   }
 
   return (
-    <CardFooter className='flex items-center justify-center border-t border-blue-gray-50 p-4'>
-      <div className='flex items-center gap-4'>
-        <Button
-          variant='text'
-          color='blue-gray'
-          className='flex items-center gap-2 rounded-full'
-          onClick={prev}
-          disabled={active === pages - 1 }>
-          <ArrowLeftIcon strokeWidth={2} className='h-4 w-4' /> Anterior
-        </Button>
-        <div className='flex items-center gap-2'>
-          {Array.from({ length: Math.min(MAX_ITEMS, pages) }).map((_, index) => index + first)
-          .map((page, idxPage) => <IconButton key={idxPage} {...getItemProps(idxPage)}>{page}</IconButton>)}
-          
-        </div>
-        <Button
-          variant='text'
-          color='blue-gray'
-          className='flex items-center gap-2 rounded-full'
-          onClick={next}
-          disabled={active === pages - 1}>
-          Próxima
-          <ArrowRightIcon strokeWidth={2} className='h-4 w-4' />
-        </Button>
-      </div>
-    </CardFooter>
+    <ButtonGroup variant="outlined" color="blue-gray" className='flex items-center justify-center p-4'>
+      <Button onClick={prev} className='py-[10.7px]'>
+        <ArrowLeftIcon strokeWidth={2} className="max-h-fit w-4 inline mr-2" />
+        Anterior
+      </Button>
+      {Array.from({ length: Math.min(MAX_ITEMS, pages) }).map((_, index) => index + first)
+        .map((page, idxPage) => <IconButton key={idxPage} {...getItemProps(idxPage)}>{page}</IconButton>)}
+      <Button onClick={next} className='pt-[9.6px]'>
+        Próxima
+        <ArrowRightIcon strokeWidth={2} className="h-4 w-4 inline ml-2" />
+      </Button>
+    </ButtonGroup>
   )
 }

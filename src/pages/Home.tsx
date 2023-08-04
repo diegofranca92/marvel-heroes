@@ -43,7 +43,6 @@ export function Home() {
         value={search.toLowerCase()}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <Pagination limit={12} offset={240} total={1200} />
       {loading ?
         <div className='flex justify-center items-center h-screen'>
           <Loading />
@@ -59,6 +58,7 @@ export function Home() {
                 thumbnail={hero.thumbnail}
               />
             ))}
+            <Pagination limit={10} offset={240} total={1200} />
           </div>
         )}
     </>
