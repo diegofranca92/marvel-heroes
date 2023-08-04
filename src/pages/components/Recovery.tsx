@@ -1,7 +1,8 @@
 import { Input, Typography, Button } from '@material-tailwind/react'
-import { AtSymbolIcon } from '@heroicons/react/24/outline'
+import { AtSymbolIcon, ExclamationCircleIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
+import { useForm } from 'react-hook-form'
 
 export function Recovery() {
 
@@ -9,15 +10,23 @@ export function Recovery() {
   const [showMessage, setShowMessage] = useState(false)
   const [showRecovery, setShowRecovery] = useState(true)
 
-  function handleRecoveryPass() {
-    setShowRecovery(false)
-    setShowMessage(true)
+  const { register, handleSubmit, formState: { errors } } = useForm<User.LoginFormData>({
+    defaultValues: {
+      email: ''
+    }
+  })
+
+  async function onSubmit(payload: User.LoginFormData) {
+    if(payload) {
+      setShowRecovery(false)
+      setShowMessage(true)
+    }
   }
 
   return (
     <div className='mb-4 flex flex-col gap-6'>
       {showRecovery && (
-        <>
+        <form className='flex flex-col gap-6' onSubmit={handleSubmit(onSubmit)}>
           <Typography variant='h1' color='blue-gray'>
             Recuperar senha<strong className='text-pontua-orange-500'>.</strong>
           </Typography>
@@ -25,23 +34,32 @@ export function Recovery() {
             Informe o e-mail do seu cadastro. Nós estaremos realizando o envio de um
             link com as instruções para você redefinir a sua senha
           </Typography>
-          <Input
-            size='lg'
-            type='text'
-            required
-            label='Usuário'
-            className='text-pontua-primary font-bold'
-            icon={<AtSymbolIcon />}
-          />
+          <div>
+            <Input
+              size='lg'
+              type='email'
+              {...register('email', { required: "É necessário o email para fazer login" })}
+              label='Email'
+              className='text-pontua-primary font-bold'
+              icon={<AtSymbolIcon />}
+            />
+            {errors.email && (
+              <Typography
+                variant="small"
+                color="red"
+                className="flex items-center mt-2 font-normal"
+              ><ExclamationCircleIcon className='h-6 mr-1' /> {errors.email?.message}</Typography>
+            )}
+
+          </div>
           <Button
-            onClick={handleRecoveryPass}
             className='mt-6 bg-pontua-primary'
             size='lg'
             type='submit'
             fullWidth>
             enviar link
           </Button>
-        </>
+        </form>
       )}
 
       {showMessage && (

@@ -9,6 +9,6 @@
 - [x] Pagina de detalhes do Perfil
 - [x] Layouts Login
 - [x] Responsividade
+- [x] Pesquisa
+- [x] Authenticação
 - [ ] Paginação
-- [ ] Pesquisa
-- [ ] Authenticação
