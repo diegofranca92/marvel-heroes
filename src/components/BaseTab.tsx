@@ -40,8 +40,8 @@ export function BaseTab({ hero }: TabProps) {
       content:
         <ul>
           {!hero.comics.items.length && 'Not found comics'}
-          {hero.comics.items.map(comic => (
-            <li className='list-disc'>{comic.name}</li>
+          {hero.comics.items.map((comic, idx) => (
+            <li key={idx} className='list-disc'>{comic.name}</li>
           ))}
         </ul>
     },
@@ -51,8 +51,8 @@ export function BaseTab({ hero }: TabProps) {
       content:
         <ul>
           {!hero.series.items.length && 'Not found series'}
-          {hero.series.items.map(serie => (
-            <li className='list-disc'>{serie.name}</li>
+          {hero.series.items.map((serie, idx) => (
+            <li key={idx} className='list-disc'>{serie.name}</li>
           ))}
         </ul>
     },
@@ -62,8 +62,8 @@ export function BaseTab({ hero }: TabProps) {
       content:
         <ul>
           {!hero.stories.items.length && 'Not found stories'}
-          {hero.stories.items.map(story => (
-            <li className='list-disc'>{story.name}</li>
+          {hero.stories.items.map((story, idx) => (
+            <li key={idx} className='list-disc'>{story.name}</li>
           ))}
         </ul>
     },
@@ -73,8 +73,8 @@ export function BaseTab({ hero }: TabProps) {
       content:
         <ul>
           {!hero.events.items.length && 'Not found events'}
-          {hero.events.items.map(event => (
-            <li className='list-disc'>{event.name}</li>
+          {hero.events.items.map((event, idx) => (
+            <li key={idx} className='list-disc'>{event.name}</li>
           ))}
         </ul>
     }

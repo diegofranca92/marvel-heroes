@@ -3,7 +3,7 @@ import { Select, Option } from '@material-tailwind/react'
 import api from '../services/api'
 
 type SelectProps = {
-  selectedItem(data: any): void
+  selectedItem(data: string | undefined ): void
 }
 
 export function BaseSelect({ selectedItem }: SelectProps) {

@@ -33,6 +33,7 @@ export function Pagination({ limit, total, offset }: PaginationProps) {
     color: active === index ? 'blue' : 'blue-gray',
     onClick: () => setActive((index - 1) * limit),
     className: 'rounded-full'
+    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   } as any)
 
   const next = () => {

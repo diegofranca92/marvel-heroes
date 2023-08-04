@@ -22,8 +22,9 @@ export function SignIn() {
   // function showPass() {
   //   // https://horadecodar.com.br/como-fazer-input-de-password-com-olho-de-mostrar-senha/
   // }
-
-  async function onSubmit(e: any) {
+  
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+  async function onSubmit(e: any) {  
     e.preventDefault()
     await signIn({ email: 'TESTETSTE', password: 'mdlkçmfnlksdf' })
     // navigate('/home')

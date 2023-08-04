@@ -1,17 +1,19 @@
-import { createContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState, PropsWithChildren } from 'react'
 import { Navigate } from 'react-router-dom'
 
 interface ContextProps {
-  user: any
+  user: User.IUser | null | string
   signed: boolean
   signIn: (payload: User.LoginFormData) => Promise<void>
   signOut: () => void
   checkUserAuth: () => void
 }
 
+interface IAuthProviderInterface {}
+
 export const AuthContext = createContext<ContextProps>({} as ContextProps)
 
-export const AuthProvider = ({ children }: any) => {
+export const AuthProvider = ({ children }: PropsWithChildren<IAuthProviderInterface>) => {
   const [user, setUser] = useState<User.IUser | null | string>(null)
 
   const checkUserAuth = async () => {

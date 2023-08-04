@@ -35,8 +35,8 @@ export function Profile() {
         <div className='flex justify-center items-center h-screen'>
           <Loading />
         </div>
-        : characterProfile?.map(profile => (
-          <BaseTab hero={profile} />
+        : characterProfile?.map((profile, idx) => (
+          <BaseTab key={idx} hero={profile} />
         ))
       }
     </>

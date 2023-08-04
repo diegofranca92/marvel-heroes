@@ -7,12 +7,12 @@ import { useState } from 'react'
 export function Agent() {
   const navigate = useNavigate()
   const { user, checkUserAuth } = useAuth()
-  const [agentId, setAgentId] = useState(0)
+  const [agentId, setAgentId] = useState<string>('')
 
   async function handleLogin() {
     localStorage.setItem('@Auth:user', JSON.stringify(user))
      checkUserAuth()
-     if (agentId != 0) {
+     if (agentId) {
        navigate(`/profile/${agentId}`)
      }
   }
@@ -27,12 +27,14 @@ export function Agent() {
         Tenha a visão completa do seu agente.
       </Typography>
       <BaseSelect selectedItem={(data) => {
-        setAgentId(data)
+        if (data) {
+          setAgentId(data)
+        }
       }} />
       <Button onClick={handleLogin}
         className='mt-6 bg-pontua-primary'
         size='lg'
-        disabled={agentId == 0}
+        disabled={!agentId.length}
         >
         entrar
       </Button>
