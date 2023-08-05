@@ -1,5 +1,5 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
-import { HeroCard } from '../components/HeroCard'
+import HeroCard from '../components/HeroCard'
 import { Input } from '@material-tailwind/react'
 import { useEffect, useState } from 'react'
 import api from '../services/api'

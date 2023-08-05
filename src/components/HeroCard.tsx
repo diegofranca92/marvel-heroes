@@ -7,9 +7,9 @@ import {
   Button,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
+import { memo } from 'react';
 
-
-export function HeroCard({ id, name, thumbnail, description }: Hero.HeroCard) {
+function HeroCard({ id, name, thumbnail, description }: Hero.HeroCard) {
   return (
     <Card className="bg-blue-gray-50 rounded-3xl">
       <div className="flex w-[22rem] max-w-full h-52 max-h-fit flex-row">
@@ -49,3 +49,5 @@ export function HeroCard({ id, name, thumbnail, description }: Hero.HeroCard) {
     </Card>
   );
 }
+
+export default memo(HeroCard)
