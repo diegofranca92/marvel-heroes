@@ -1,4 +1,3 @@
-// import { useRef } from 'react'
 import {
   Button,
   Typography,
@@ -10,15 +9,17 @@ import {
   AtSymbolIcon,
   EyeIcon,
   ShieldExclamationIcon,
-  ExclamationCircleIcon
+  ExclamationCircleIcon,
+  EyeSlashIcon
 } from '@heroicons/react/24/outline'
 
 import { useNavigate } from 'react-router-dom'
 import useAuth from '../hooks/useAuth'
 import { useForm } from 'react-hook-form'
+import { useState } from 'react'
 
 export function SignIn() {
-  // const inputPass = useRef(null)
+  const [showPassword, setShowPassword] = useState(false)
   const navigate = useNavigate()
   const { signIn } = useAuth()
 
@@ -29,9 +30,9 @@ export function SignIn() {
     }
   })
 
-  // function showPass() {
-  //   // https://horadecodar.com.br/como-fazer-input-de-password-com-olho-de-mostrar-senha/
-  // }
+  function handleShowPassword() {
+    setShowPassword(!showPassword)
+  }
 
   // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   async function onSubmit(payload: User.LoginFormData) {
@@ -71,13 +72,13 @@ export function SignIn() {
           </div>
           <div>
             <Input
-              type='password'
+              type={showPassword ? "text" : "password"}
               size='lg'
               label='Senha'
               {...register('password', { required: "Coloque sua senha" })}
               icon={
-                <IconButton className='bg-transparent bottom-2 right-2 opacity-50 hover:shadow-none'>
-                  <EyeIcon className='text-pontua-primary h-6 w-6' />
+                <IconButton onClick={handleShowPassword} className='bg-transparent bottom-2 right-2 opacity-50 hover:shadow-none'>
+                  {showPassword ? <EyeIcon className='text-pontua-primary h-6 w-6' /> : <EyeSlashIcon className='text-pontua-primary h-6 w-6' />}
                 </IconButton>
               }
             />
