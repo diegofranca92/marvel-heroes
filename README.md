@@ -1,6 +1,8 @@
 # Marvel heroes agents
 
+<!-- Dark Mode
 
+https://www.youtube.com/watch?v=Mu9puNcZ5WI -->
 
 ### TODO
 
@@ -11,4 +13,5 @@
 - [x] Responsividade
 - [x] Pesquisa
 - [x] Authenticação
-- [ ] Paginação
+- [x] Testes unitários
+- [x] Paginação

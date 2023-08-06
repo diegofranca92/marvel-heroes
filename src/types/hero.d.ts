@@ -14,6 +14,14 @@ declare namespace Hero {
     name: string
   }
 
+  interface HeroDataApi {
+    count: number
+    limit: number
+    offset: number
+    total: number
+    results: HeroCard[]
+  }
+
   interface HeroDetail extends HeroCard {
     comics: {
       items: DetailItems[]

@@ -34,9 +34,7 @@ export function SignIn() {
     setShowPassword(!showPassword)
   }
 
-  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   async function onSubmit(payload: User.LoginFormData) {
-
     await signIn(payload)
     navigate('/agent')
   }

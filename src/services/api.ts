@@ -4,8 +4,12 @@ const hash = import.meta.env.VITE_HASH_KEY
 const auth = `apikey=${apikey}&ts=1&hash=${hash}`
 
 const api = {
-  getAll: function (endpoint: string) {
-    return fetch(`${baseURL}${endpoint}?${auth}`)
+  getAll: function (endpoint: string, limit?:number, offset?:number) {
+    if (limit || offset) {
+      return fetch(`${baseURL}${endpoint}?${auth}&limit=${limit}&offset=${offset}`)
+    } else {
+      return fetch(`${baseURL}${endpoint}?${auth}`)
+    }
   },
 
   getById: function (endpoint: string, id: string, path?: string) {
