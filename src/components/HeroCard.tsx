@@ -12,7 +12,7 @@ import { memo } from 'react';
 function HeroCard({ id, name, thumbnail, description }: Hero.HeroCard) {
   return (
     <Card className="bg-blue-gray-50 rounded-3xl">
-      <div className="flex w-[22rem] max-w-full h-52 max-h-fit flex-row">
+      <div className="flex w-[18rem] max-w-full h-52 max-h-fit flex-row">
         <CardHeader
           shadow={false}
           floated={false}

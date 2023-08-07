@@ -6,7 +6,7 @@ type LayoutProps = {
 
 export function LayoutIntern({ children }: LayoutProps) {
   return (
-    <main className='flex'>
+    <main className='block md:flex mx-auto max-w-[1320px]'>
       <div className='md:hidden'>
         <MenuDrawer />
       </div>

@@ -81,7 +81,7 @@ export function BaseTab({ hero }: TabProps) {
   ]
 
   return (
-    <div className='m-12 flex-1'>
+    <div className='my-12 flex-1'>
       <Breadcrumb profile={hero.name} />
       <Tabs className='mt-8' value={activeTab}>
         <TabsHeader

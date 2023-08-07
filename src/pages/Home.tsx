@@ -47,23 +47,24 @@ export function Home() {
           <Loading />
         </div>
       ) : (
-        <div className='my-8 gap-6 flex flex-wrap justify-center'>
-          {heroesFiltered?.map(hero => (
-            <HeroCard
-              key={hero.id}
-              id={hero.id}
-              description={hero.description}
-              name={hero.name}
-              thumbnail={hero.thumbnail}
-            />
-          ))}
+        <>
+          <div className='my-8 gap-4 flex flex-wrap justify-center min-h-[400px]'>
+            {heroesFiltered?.map(hero => (
+              <HeroCard
+                key={hero.id}
+                id={hero.id}
+                description={hero.description}
+                name={hero.name}
+                thumbnail={hero.thumbnail}
+              />
+            ))}
+          </div>
           <Pagination
             setOffset={setOffset}
             limit={LIMIT}
             offset={offset}
             total={charactersData?.total}
-          />
-        </div>
+          /></>
       )}
     </>
   )
