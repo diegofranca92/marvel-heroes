@@ -8,8 +8,8 @@ https://www.youtube.com/watch?v=Mu9puNcZ5WI -->
 > :octocat: Dev responsável: [**Diego França**](https://www.linkedin.com/in/diego-fran%C3%A7a-aa66ba78)
 > Está aplicação está hospedada na Vercel, você pode conferir nesse [link](https://marvel-heroes-nine-omega.vercel.app/)
 ### :camera: Screens
-
-
+https://www.loom.com/share/2a59f7b95b2d441eb2fe0010a57c8197
+https://www.loom.com/share/2ae0a07b3b104f208fbda5c5a7d758d4
 ### :computer: Como rodar o projeto
 
 ```bash
