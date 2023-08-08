@@ -44,7 +44,7 @@ https://www.loom.com/share/2ae0a07b3b104f208fbda5c5a7d758d4
 - [x] Layouts Login
 - [x] Validação de formulários
 - [x] Responsividade
-- [x] Pesquisa
+- [x] Pesquisa (só é possivel pesquisar na página corrente, pois a API não oferece filtro)
 - [x] Authenticação
 - [x] Testes unitários
 - [x] Paginação
