@@ -22,11 +22,6 @@ yarn dev
 npm run dev
 
 ```
-
-### :camera: Screens
-https://www.loom.com/share/2a59f7b95b2d441eb2fe0010a57c8197
-https://www.loom.com/share/2ae0a07b3b104f208fbda5c5a7d758d4
-
 ### :wrench: Tecnologias utilizas
 - React (Hooks, Context API, React Router, etc.)
 - React form hooks
