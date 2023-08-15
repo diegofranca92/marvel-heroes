@@ -28,7 +28,7 @@ export function BaseSelect({ selectedItem }: SelectProps) {
     <div className='w-72'>
       <Select
         size='lg'
-        label='Selecione um agente'
+        label='Selecione um herói'
         onChange={selected => selectedItem(selected)}
         selected={element => {
           return element &&

@@ -58,7 +58,7 @@ export function Pagination({
           <IconButton
             key={idxPage}
             onClick={() => handleChanglePage(page, idxPage)}
-            className={`${active === idxPage ? 'bg-pontua-primary text-white font-semibold' : ''} ${current === idxPage ? '': 'hidden'} md:block`}>
+            className={`${active === idxPage ? 'bg-custom-primary text-white font-semibold' : ''} ${current === idxPage ? '': 'hidden'} md:block`}>
             {page}
           </IconButton>
         ))}

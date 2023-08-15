@@ -41,7 +41,7 @@ export function SignIn() {
   return (
     <>
       <Typography variant='h1' color='blue-gray'>
-        Bem vindo<strong className='text-pontua-orange-500'>.</strong>
+        Bem vindo<strong className='text-custom-orange-500'>.</strong>
       </Typography>
       <Typography color='gray' className='mt-1 font-normal'>
         Informe as suas credenciais de acesso ao portal
@@ -90,13 +90,13 @@ export function SignIn() {
           </div>
         </div>
         <Button
-          className='mt-6 bg-pontua-primary'
+          className='mt-6 bg-custom-primary'
           size='lg'
           type='submit'
           fullWidth>
           entrar <ArrowRightOnRectangleIcon className='w-6 h-6 inline' />
         </Button>
-        <Button variant="text" onClick={() => navigate('recovery')} className='text-pontua-orange-500 text-end float-right mt-4'>
+        <Button variant="text" onClick={() => navigate('recovery')} className='text-custom-orange-500 text-end float-right mt-4'>
           <ShieldExclamationIcon className='w-5 h-5 inline' />
           Esqueceu a senha?
         </Button>

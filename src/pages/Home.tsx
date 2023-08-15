@@ -37,7 +37,7 @@ export function Home() {
     <>
       <Input
         icon={<MagnifyingGlassIcon className='h-5 w-5' />}
-        label='Busque um agente'
+        label='Busque um herói'
         type='search'
         value={search.toLowerCase()}
         onChange={e => setSearch(e.target.value)}

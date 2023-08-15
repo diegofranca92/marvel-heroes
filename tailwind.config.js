@@ -10,11 +10,11 @@ export default withMT({
   theme: {
     extend: {
       colors: {
-        pontua:{
-          primary: "#00113d",
+        custom:{
+          primary: "#3A1F73",
           orange: {
-            400: "#f43724",
-            500: "#f21a05"
+            400: "#8C2c5a",
+            500: "#8C1C5A"
           }
         }
       }

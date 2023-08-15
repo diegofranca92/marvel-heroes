@@ -5,7 +5,7 @@ import {
   List,
   ListItem
 } from '@material-tailwind/react'
-import logoPontua from '../assets/logo_pontua.svg'
+import logoMarvel from '../assets/marvel.jpeg'
 import {
   ArrowLeftOnRectangleIcon,
   Bars3Icon,
@@ -25,7 +25,7 @@ export function SideBar() {
   return (
     <Card className='min-h-full h-screen w-full max-w-[18rem] p-4 shadow-xl'>
       <div className='mb-2 flex items-center justify-between p-4'>
-        <img src={logoPontua} className='w-3/5' alt='Logomarca Pontua' />
+        <img src={logoMarvel} className='w-3/5' alt='Logomarca Marvel' />
       </div>
       <hr className='my-2 border-blue-gray-50' />
       <NavList />
@@ -78,15 +78,15 @@ export function MenuDrawer() {
   return (
     <React.Fragment>
       <div className='mb-2 flex items-center justify-between fixed top-0 shadow-sm h-[60px] bg-white z-50 w-screen p-4'>
-        <img src={logoPontua} className='w-3/12' alt='Logomarca Pontua' />
-        <IconButton onClick={openDrawer} className='bg-pontua-primary'>
+        <img src={logoMarvel} className='w-3/12' alt='Logomarca Pontua' />
+        <IconButton onClick={openDrawer} className='bg-custom-primary'>
           <Bars3Icon className='h-8 w-8 text-white' />
         </IconButton>
       </div>
 
       <Drawer open={open} onClose={closeDrawer}>
         <div className='mb-2 flex items-center justify-between p-4'>
-          <img src={logoPontua} className='w-3/5' alt='Logomarca Pontua' />
+          <img src={logoMarvel} className='w-3/5' alt='Logomarca Pontua' />
           <IconButton variant='text' color='blue-gray' onClick={closeDrawer}>
             <XMarkIcon className='h-6 w-6' />
           </IconButton>

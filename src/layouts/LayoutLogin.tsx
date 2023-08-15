@@ -2,8 +2,8 @@ import React from 'react'
 import {
   Card,
 } from '@material-tailwind/react'
-import logoPontuaWhite from '../assets/logo_pontua_white.svg'
-import building from '../assets/bro.png'
+import logoMarvel from '../assets/marvel.jpeg'
+import marvelLogin from '../assets/marvel_login.png'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -12,18 +12,18 @@ type LayoutProps = {
 export function LayoutLogin({ children }: LayoutProps) {
 
   return (
-    <main className='w-full h-screen bg-pontua-primary'>
+    <main className='w-full h-screen bg-custom-primary'>
       <div className=' flex flex-col  mx-auto max-w-[1320px]'>
         <div>
           <img
-            src={logoPontuaWhite}
-            className='w-40 p-4 hidden md:block'
+            src={logoMarvel}
+            className='w-[200px] p-4 hidden md:block'
             alt='Logomarca Pontua'
           />
         </div>
         <div className='flex justify-around flex-wrap items-center w-full'>
           <div className='w-5/12'>
-            <img src={building} className='hidden lg:block' alt='' />
+            <img src={marvelLogin} className='hidden lg:block' alt='' />
           </div>
           <Card className='p-4 rounded-3xl w-[28rem] h-[28rem] m-4'>
             {children}

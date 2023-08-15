@@ -28,7 +28,7 @@ export function Recovery() {
       {showRecovery && (
         <form className='flex flex-col gap-6' onSubmit={handleSubmit(onSubmit)}>
           <Typography variant='h1' color='blue-gray'>
-            Recuperar senha<strong className='text-pontua-orange-500'>.</strong>
+            Recuperar senha<strong className='text-custom-orange-500'>.</strong>
           </Typography>
           <Typography color='gray' className='mt-1 font-normal'>
             Informe o e-mail do seu cadastro. Nós estaremos realizando o envio de um
@@ -53,7 +53,7 @@ export function Recovery() {
 
           </div>
           <Button
-            className='mt-6 bg-pontua-primary'
+            className='mt-6 bg-custom-primary'
             size='lg'
             type='submit'
             fullWidth>
@@ -65,14 +65,14 @@ export function Recovery() {
       {showMessage && (
         <>
           <Typography variant='h1' color='blue-gray'>
-            Tudo certo<strong className='text-pontua-orange-500'>;)</strong>
+            Tudo certo<strong className='text-custom-orange-500'>;)</strong>
           </Typography>
           <Typography color='gray' className='mt-1 font-normal'>
             Foi enviado um e-mail para você com instruções de como redefinir a sua
             senha.
           </Typography>
           <Button
-            className='mt-6 bg-pontua-primary'
+            className='mt-6 bg-custom-primary'
             size='lg'
             type='submit'
             onClick={() => navigate('/')}
