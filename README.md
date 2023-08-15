@@ -2,7 +2,7 @@
 
 https://www.youtube.com/watch?v=Mu9puNcZ5WI -->
 
-## <h1 align="center">Marvel heroes agents</h1>
+## <h1 align="center">Marvel heroes</h1>
 <hr/>
 
 > :octocat: Dev responsável: [**Diego França**](https://www.linkedin.com/in/diego-fran%C3%A7a-aa66ba78)
